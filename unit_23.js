@@ -21,11 +21,18 @@ document.querySelector('.b-2').addEventListener('click', t2);
 // Task 3 ============================================
 /*  При нажатии кнопки t3 выведите из LS сохранненный массив a2. Выведите в out-3 в формате ключ пробел значение перенос строки.  */
 
+const out3 = document.querySelector('.out-3');
 function t3() {
-
+    const dataLS = JSON.parse(localStorage.getItem('a2'));
+    if (!dataLS) return false;
+    let resultStr = '';
+    dataLS.forEach(element => {
+        resultStr += `a2 ${element}<br>`;
+    });
+    out3.innerHTML = resultStr;
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-3').addEventListener('click', t3);
 
 
 // Task 4 ============================================
