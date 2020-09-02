@@ -38,29 +38,39 @@ document.querySelector('.b-3').addEventListener('click', t3);
 // Task 4 ============================================
 /*  Создайте функцию t4 которая записывает  в LS  массив a4 = {hello: world, hi:mahai}. Ключ a4. Проверьте что происходит при повторном вызове функции. Запускается ф-я по кнопкуе b-4.*/
 
+const a4 = {
+    hello: 'world',
+    hi: 'mahai'
+};
 function t4() {
-
+    localStorage.setItem('a4', JSON.stringify(a4));
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-4').addEventListener('click', t4);
 
 // Task 5 ============================================
 /*   При нажатии кнопки b-5 выведите из LS сохранненный массив a4. Выведите в out-5 в формате ключ пробел значение перенос строки. */
 
+const out5 = document.querySelector('.out-5');
 function t5() {
-
+    const dataLS = JSON.parse(localStorage.getItem('a4'));
+    let str = '';
+    for (const key in dataLS) {
+        str += `${key} ${dataLS[key]}<br>`;
+    }
+    out5.innerHTML = str;
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-5').addEventListener('click', t5);
 
 // Task 6 ============================================
 /*  Создайте функцию t6 которая очищает весь LS. Запуск по кнопке b-6*/
 
 function t6() {
-
+    localStorage.clear();
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-6').addEventListener('click', t6);
 
 
 // Task 7 ============================================
