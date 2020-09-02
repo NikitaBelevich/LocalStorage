@@ -91,9 +91,10 @@ document.querySelector('.b-7').addEventListener('click', t7);
 /*   Создайте функцию t8 при запуске которой из a7 удаляется последний элемент. После чего массив сохраняется в LS с ключем a7. Использовать массив из предыдущего задания. */
 
 function t8() {
-
+    a7.pop();
+    localStorage.setItem('a7', JSON.stringify(a7));
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-8').addEventListener('click', t8);
 
 
