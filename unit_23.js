@@ -76,11 +76,16 @@ document.querySelector('.b-6').addEventListener('click', t6);
 // Task 7 ============================================
 /*  Создайте input i-7 куда пользователь может вводить числа и строки. Создайте массив a7. Когда пользователь нажимает кнопку b-7 число должно добавляться в массив. Массив должен сохраняться в LS с ключем a7.*/
 
+const a7 = [];
+const inp7 = document.querySelector('.i-7');
 function t7() {
-
+    let value = inp7.value.trim();
+    if (!value) return;
+    a7.push(value);
+    localStorage.setItem('a7', JSON.stringify(a7));
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-7').addEventListener('click', t7);
 
 // Task 8 ============================================
 /*   Создайте функцию t8 при запуске которой из a7 удаляется последний элемент. После чего массив сохраняется в LS с ключем a7. Использовать массив из предыдущего задания. */
